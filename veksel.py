@@ -139,5 +139,19 @@ def delete_iron(a):
 def create_stroka(x):
     return x["name"]+" "+x["count"]
 
+def marsh(s_name="ифнир"):
+    s_name=s_name.lower()
+    locations=get_slover_massiv(s_name)
+    west, east = [], []
+
+    for i in locations:
+        if i["side"] == "w":
+            west.append(i)
+        if i["side"] == "e":
+            east.append(i)
+    k = selest_location(west, east)
+    k = delete_iron(k)
+    return k
+
 
 
