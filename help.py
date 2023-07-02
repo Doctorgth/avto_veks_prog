@@ -19,27 +19,3 @@ def get_color(i):
     if k==100:
         return "red"
     return "black"
-class text():
-    def __init__(self,mas,x,y):
-        self.mas=[]
-        self.mas_i=mas
-        self.pos=0
-        pad_y=0
-        for i in mas:
-            k=tk.Label(text=i["name"]+" "+i["res"]+" "+i["count"])
-            #k["fg"]="purple"
-            k["fg"]=get_color(i)
-            k["bg"]="black"
-            self.mas.append(k)
-            k.place(x=x,y=y+pad_y)
-            pad_y+=20
-        self.next()
-        self.prev()
-    def next(self):
-        self.mas[self.pos]["fg"]=get_color(self.mas_i[self.pos])
-        self.pos+=1
-        self.mas[self.pos]["fg"] = "purple"
-    def prev(self):
-        self.mas[self.pos]["fg"] = get_color(self.mas_i[self.pos])
-        self.pos -= 1
-        self.mas[self.pos]["fg"] = "purple"
